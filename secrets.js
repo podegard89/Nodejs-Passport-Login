@@ -7,6 +7,7 @@ module.exports = {
   // reads environment variables via dotenv file
   sheetUrl: process.env.SHEET_URL,
   session_key: process.env.SESSION_SECRET,
+  port: process.env.PORT,
   credentials: {
     "type": process.env.TYPE,
     "project_id": process.env.PROJECT_ID,
