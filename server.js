@@ -1,7 +1,3 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
-
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
@@ -9,6 +5,7 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
+const secrets = require('./secrets');
 const Sheet = require('./sheet');
 
 // Initialize new sheet
@@ -31,7 +28,7 @@ app.set('view-engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(flash());
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: secrets.session_key,
   resave: false,
   saveUninitialized: false
 }));

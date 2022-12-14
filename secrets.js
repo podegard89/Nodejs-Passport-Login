@@ -6,6 +6,7 @@ let newKey = key.replace(/\\n/g, '\n');
 module.exports = {
   // reads environment variables via dotenv file
   sheetUrl: process.env.SHEET_URL,
+  session_key: process.env.SESSION_SECRET,
   credentials: {
     "type": process.env.TYPE,
     "project_id": process.env.PROJECT_ID,
