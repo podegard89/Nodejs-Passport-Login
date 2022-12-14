@@ -66,33 +66,33 @@ app.post('/register', checkAuthenticated, async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: hashedPassword
-    })
-    res.redirect('/login')
+    });
+    res.redirect('/login');
   } catch {
-    res.redirect('/register')
+    res.redirect('/register');
   }
 })
 
 app.delete('/logout', (req, res) => {
   req.logOut((err) => {
-    if (err) { return next(err); }
+    if (err) { return next(err); };
   })
-  res.redirect('/login')
+  res.redirect('/login');
 })
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    return next()
+    return next();
   }
 
-  res.redirect('/login')
+  res.redirect('/login');
 }
 
 function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    return res.redirect('/')
+    return res.redirect('/');
   }
-  next()
+  next();
 }
 
-app.listen(3000)
+app.listen(3000);
