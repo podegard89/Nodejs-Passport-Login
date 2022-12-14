@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 let key = process.env.PRIVATE_KEY;
 let newKey = key.replace(/\\n/g, '\n');
